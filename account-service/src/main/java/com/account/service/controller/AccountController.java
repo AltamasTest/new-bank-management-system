@@ -48,9 +48,6 @@ public ResponseEntity<String> createAccount(@RequestBody Account account) {
 	  return accountServiceImpl.getAllAccount();
   }
   
-  
-  
-  
 	
 
 }
