@@ -1,0 +1,13 @@
+package com.bms.loan.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.bms.loan.domain.PersonalLoan;
+
+@Repository
+public interface PersonalLoanRepository extends JpaRepository<PersonalLoan, Integer> {
+
+	
+	public PersonalLoan savePersionalLoan();
+}

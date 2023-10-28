@@ -1,0 +1,5 @@
+package com.bms.registration.service;
+
+public interface UserService {
+
+}

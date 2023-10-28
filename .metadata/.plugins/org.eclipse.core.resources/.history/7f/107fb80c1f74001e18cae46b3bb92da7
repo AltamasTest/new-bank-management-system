@@ -1,0 +1,5 @@
+package com.bms.registration.dto;
+
+public class UserRegistrationDto {
+
+}

@@ -1,0 +1,23 @@
+package com.bms.registration.service;
+
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
+import com.bms.registration.dto.UserRegistrationDto;
+import com.bms.registration.model.User;
+
+public class UserServiceImpl implements UserService{
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User save(UserRegistrationDto registrationDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

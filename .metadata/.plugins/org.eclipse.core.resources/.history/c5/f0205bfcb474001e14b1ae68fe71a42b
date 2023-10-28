@@ -1,0 +1,52 @@
+package com.account.service.service;
+
+import java.util.Optional;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.account.service.domain.Account;
+import com.account.service.dto.AccountDto;
+
+import com.account.service.repository.AccountRepository;
+
+@Service
+public class AccountServiceImpl implements AccountService {
+
+	@Autowired
+	private ModelMapper modelMapper;
+
+	private AccountRepository accountRepository;
+
+	public AccountServiceImpl(AccountRepository accountRepository) {
+		super();
+		this.accountRepository = accountRepository;
+	}
+
+	// DTO to Account
+	public Account convertDtoToAccount(AccountDto accountDto) {
+		Account account = this.modelMapper.map(accountDto, Account.class);
+		return account;
+	}
+
+	// AccountDto to Account
+	public AccountDto convertAccountToAccountDto(Account account) {
+		AccountDto accountDto = this.modelMapper.map(account, AccountDto.class);
+		return accountDto;
+	}
+
+	
+	public Account getAccountDetailsById(int id) {
+		Account acc = accountRepository.findById(id).get();
+		return acc;
+	}
+
+	@Override
+	public String createAccount(Account account) {
+		accountRepository.save(account);
+		return "Your Account Created";
+	}
+
+}

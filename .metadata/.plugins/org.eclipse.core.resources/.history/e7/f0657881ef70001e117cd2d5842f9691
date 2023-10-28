@@ -1,0 +1,33 @@
+package com.bms.loan.domain;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name="persional_loan_tbl")
+public class PersonalLoan {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int personalLoanId;
+	private String loanType;
+	private String Date;
+	private int loanAmount;
+	private String loanDuration;
+	private int rateOfInterest;
+	private int annualIncome;
+	private String designation;
+	private int totalExperience;
+	private int experienceWithCurrentCompany;
+	
+	
+
+}

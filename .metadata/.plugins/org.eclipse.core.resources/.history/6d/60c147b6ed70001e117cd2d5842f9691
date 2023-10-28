@@ -1,0 +1,31 @@
+package com.bms.loan.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.bms.loan.domain.PersonalLoan;
+import com.bms.loan.repository.PersonalLoanRepository;
+
+@Service
+public class PersonalLoanServiceImpl implements LoanService {
+
+@Autowired	
+private	PersonalLoanRepository personalLoanRepository;
+
+public PersonalLoanServiceImpl(PersonalLoanRepository personalLoanRepository) {
+	super();
+	this.personalLoanRepository = personalLoanRepository;
+}
+
+
+//  Loan apply
+   public PersonalLoan savePersonalLoan(PersonalLoan personalLoan) {
+	    
+	   return personalLoanRepository.save(personalLoan);
+	
+   }
+
+
+
+
+}

@@ -1,0 +1,27 @@
+package com.bms.loan.service;
+
+import org.springframework.stereotype.Service;
+
+import com.bms.loan.domain.PersonalLoan;
+import com.bms.loan.repository.PersonalLoanRepository;
+
+@Service
+public class PersonalLoanService implements LoanService {
+
+	
+private	PersonalLoanRepository persionalLoanRepository;
+
+public PersonalLoanService(PersonalLoanRepository persionalLoanRepository) {
+	super();
+	this.persionalLoanRepository = persionalLoanRepository;
+}
+
+   public PersonalLoan savePersionalLoan() {
+	
+	   
+	   return null;
+	
+   }
+
+
+}

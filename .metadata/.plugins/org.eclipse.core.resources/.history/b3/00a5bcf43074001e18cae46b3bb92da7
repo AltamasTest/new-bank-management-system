@@ -1,0 +1,11 @@
+package com.bms.registration.service;
+
+import org.springframework.security.core.userdetails.UserDetailsService;
+
+
+import com.bms.registration.dto.UserRegistrationDto;
+
+public interface UserService extends UserDetailsService{
+	com.bms.registration.model.User save(UserRegistrationDto registrationDto);
+
+}

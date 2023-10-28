@@ -1,0 +1,5 @@
+package com.bms.registration.controller;
+
+public class MainController {
+
+}

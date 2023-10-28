@@ -1,0 +1,5 @@
+package com.account.service.dto;
+
+public class EntityDto {
+
+}

@@ -1,0 +1,60 @@
+package com.account.service.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.account.service.domain.Account;
+import com.account.service.dto.AccountDto;
+import com.account.service.dto.EntityDto;
+import com.account.service.repository.AccountRepository;
+
+@Service
+public class AccountServiceImpl implements AccountService {
+
+	private AccountRepository accountRepository;
+
+	public AccountServiceImpl(AccountRepository accountRepository) {
+		super();
+		this.accountRepository = accountRepository;
+	}
+	
+  
+	public AccountDto convertEntityToDto(Account account) {
+	
+	AccountDto accountDto=new AccountDto();
+	accountDto.setAccountHolderName(account.getAccountHolderName());
+	accountDto.setAadharNo(account.getAadharNo());
+	accountDto.setAccountType(account.getAccountType());
+	accountDto.setAddress(account.getAddress());
+	accountDto.setFathersName(account.getFathersName());
+	accountDto.setMothersName(account.getMothersName());
+	accountDto.setPhoneNo(account.getPhoneNo());
+	
+	return accountDto;
+	
+	}
+	
+	
+	public EntityDto convertDtoToEntity(AccountDto accountDto) {
+		
+	//	AccountDto
+		
+		
+		
+		return null;
+		
+	}
+
+
+	@Override
+	public Optional<AccountDto> getAccountDetails(int id) {
+		
+		Optional<Account> acc= accountRepository.findById(id);
+		
+		return acc ;
+	}
+
+}

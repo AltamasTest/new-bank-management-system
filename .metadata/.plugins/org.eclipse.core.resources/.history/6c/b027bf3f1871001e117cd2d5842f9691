@@ -1,0 +1,19 @@
+package com.account.service.dto;
+
+public class AccountDto {
+	private int accountNo;
+	private String accountHolderName;
+	private String fathersName;
+	private String mothersName;	
+	private int phoneNo;
+	private int aadharNo;
+	private String accountType;
+	private String address;
+		
+	public AccountDto() {
+		
+	}
+	
+	
+
+}

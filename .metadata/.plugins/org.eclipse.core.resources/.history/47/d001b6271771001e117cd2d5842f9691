@@ -1,0 +1,65 @@
+package com.account.service.service;
+
+import java.util.Optional;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.account.service.domain.Account;
+import com.account.service.dto.AccountDto;
+import com.account.service.dto.EntityDto;
+import com.account.service.repository.AccountRepository;
+
+@Service
+public class AccountServiceImpl implements AccountService {
+
+	@Autowired
+	private ModelMapper modelMapper;
+
+	private AccountRepository accountRepository;
+
+	public AccountServiceImpl(AccountRepository accountRepository) {
+		super();
+		this.accountRepository = accountRepository;
+	}
+
+	public AccountDto convertEntityToDto(Account account) {
+
+		AccountDto accountDto = new AccountDto();
+		accountDto.setAccountHolderName(account.getAccountHolderName());
+		accountDto.setAadharNo(account.getAadharNo());
+		accountDto.setAccountType(account.getAccountType());
+		accountDto.setAddress(account.getAddress());
+		accountDto.setFathersName(account.getFathersName());
+		accountDto.setMothersName(account.getMothersName());
+		accountDto.setPhoneNo(account.getPhoneNo());
+
+		return accountDto;
+
+	}
+
+	//  DTO to Account
+	public Account convertDtoToAccount(AccountDto accountDto) {
+		Account account = this.modelMapper.map(accountDto, Account.class);
+		return account;
+	}
+	
+	public AccountDto convertAccountToAccountDto(Account account) {
+		AccountDto accountDto=this.modelMapper.map(account, AccountDto.class);
+		
+		return accountDto;
+		
+	}
+	
+
+	@Override
+	public Optional<AccountDto> getAccountDetails(int id) {
+
+		Optional<Account> acc = accountRepository.findById(id);
+
+		return acc;
+	}
+
+}

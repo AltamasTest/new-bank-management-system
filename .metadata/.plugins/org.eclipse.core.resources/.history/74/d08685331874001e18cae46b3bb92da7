@@ -1,0 +1,5 @@
+package com.bms.registration.model;
+
+public class User {
+
+}

@@ -1,0 +1,5 @@
+package com.bms.loan.service;
+
+public interface EducationLoanInterface {
+
+}

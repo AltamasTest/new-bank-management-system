@@ -1,0 +1,69 @@
+package com.account.service.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+@AllArgsConstructor
+@NoArgsConstructor
+public class AccountDto {
+	private String accountHolderName;
+	private String fathersName;
+	private String mothersName;	
+	private int phoneNo;
+	private int aadharNo;
+	private String accountType;
+	private String address;
+		
+	public AccountDto() {
+		
+	}
+	public String getAccountHolderName() {
+		return accountHolderName;
+	}
+	public void setAccountHolderName(String accountHolderName) {
+		this.accountHolderName = accountHolderName;
+	}
+	public String getFathersName() {
+		return fathersName;
+	}
+	public void setFathersName(String fathersName) {
+		this.fathersName = fathersName;
+	}
+	public String getMothersName() {
+		return mothersName;
+	}
+	public void setMothersName(String mothersName) {
+		this.mothersName = mothersName;
+	}
+	public int getPhoneNo() {
+		return phoneNo;
+	}
+	public void setPhoneNo(int phoneNo) {
+		this.phoneNo = phoneNo;
+	}
+	public int getAadharNo() {
+		return aadharNo;
+	}
+	public void setAadharNo(int aadharNo) {
+		this.aadharNo = aadharNo;
+	}
+	public String getAccountType() {
+		return accountType;
+	}
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}	
+	
+	
+
+}
